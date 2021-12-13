@@ -10,12 +10,7 @@ exports.ServelessClassification = async ({ name: filename, bucket }, _) => {
 
     const publicURI = public_path_image_gcp(bucket, filename)
 
-    db('images').insert(
-        {
-            image_url: publicURI,
-            classification: violenceStatus
-        }
-    )
+    db.insert({ image_url: publicURI, classification: violenceStatus }).into('images').then(() => { })
 }
 const classification_violence_image = async (pathFile) => {
     const client = new vision.ImageAnnotatorClient()
@@ -33,7 +28,6 @@ const get_status_violence = (violenceResult) => {
         case 'LIKELY' || 'VERY_LIKELY':
             return 'ALTO'
         default:
-            console.log(violence)
             throw new Error('Classificação desconhecida')
     }
 }
