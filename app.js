@@ -1,4 +1,3 @@
-const { Storage } = require('@google-cloud/storage');
 const vision = require('@google-cloud/vision');
 const db = require('./database')
 
