@@ -15,7 +15,6 @@ class ClassificationImages {
         const publicURI = this.storage.public_path_image_gcp(bucket, filename)
 
         this.entityImage.save({ image_url: publicURI, classification: violenceStatus })
-        // db.insert({ image_url: publicURI, classification: violenceStatus }).into('images').then(() => { })
     }
 }
 
