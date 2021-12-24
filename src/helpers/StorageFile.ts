@@ -1,3 +1,6 @@
+import { injectable } from 'inversify'
+
+@injectable()
 class StorageFile {
     constructor(storage) {
         this.storage = storage

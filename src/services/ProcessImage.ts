@@ -1,3 +1,6 @@
+import { injectable } from 'inversify'
+
+@injectable()
 class ProcessImage {
     constructor(vision) {
         this.vision = vision

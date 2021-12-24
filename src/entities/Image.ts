@@ -1,3 +1,6 @@
+import { injectable } from 'inversify'
+
+@injectable()
 class Image {
     _table = 'images';
     constructor(dbConnector) {

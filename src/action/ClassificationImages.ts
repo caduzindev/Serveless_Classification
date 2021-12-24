@@ -1,10 +1,13 @@
+import { injectable } from 'inversify'
+
+@injectable()
 class ClassificationImages {
     constructor(processImage, storage, entityImage) {
         this.processImage = processImage
         this.storage = storage
         this.entityImage = entityImage
     }
-    async execute(event) {
+    public async execute(event: any) {
         const { name: filename, bucket } = event
 
         const filePath = `gs://${bucket}/${filename}`
@@ -18,4 +21,4 @@ class ClassificationImages {
     }
 }
 
-module.exports = ClassificationImages
+export default ClassificationImages
