@@ -1,10 +1,23 @@
-import { injectable } from 'inversify'
+import { injectable, inject } from 'inversify'
+import types from '../config/types'
+import Image from '../entities/Image'
+import ImageVision from '../helpers/ImageVision'
+import StorageGCP from '../helpers/StorageGCP'
+import { Action } from './Action'
 
 @injectable()
-class ClassificationImages {
-    constructor(processImage, storage, entityImage) {
-        this.processImage = processImage
-        this.storage = storage
+class ClassificationImages implements Action {
+    private processImage: ImageVision
+    private storage: StorageGCP
+    private entityImage: Image
+
+    constructor(
+        @inject(types.ImageVision) processImage: () => ImageVision,
+        @inject(types.StorageGCP) storage: () => StorageGCP,
+        @inject(types.Entity) entityImage: Image
+    ) {
+        this.processImage = processImage()
+        this.storage = storage()
         this.entityImage = entityImage
     }
     public async execute(event: any) {
@@ -12,8 +25,7 @@ class ClassificationImages {
 
         const filePath = `gs://${bucket}/${filename}`
 
-        const violence = await this.processImage.classification_violence_image(filePath)
-        const violenceStatus = this.processImage.get_status_violence(violence)
+        const violenceStatus = await this.processImage.image_classification_violence(filePath)
 
         const publicURI = this.storage.public_path_image_gcp(bucket, filename)
 

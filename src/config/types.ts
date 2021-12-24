@@ -1,6 +1,7 @@
 export default {
     ClassificationImages: Symbol("ClassificationImages"),
-    ProcessImage: Symbol("ProcessImage"),
-    StorageFile: Symbol("StorageFile"),
-    Image: Symbol("Image")
+    ImageVision: Symbol("ImageVision"),
+    StorageGCP: Symbol("StorageGCP"),
+    Entity: Symbol("Entity"),
+    DB: Symbol("DB")
 }

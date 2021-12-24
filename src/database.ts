@@ -1,6 +1,8 @@
-const configDB = require('./config/db')
+import configDB from './config/db'
 
-const knex = require('knex')({
+import knex from "knex";
+
+const conn = knex({
     client: 'mysql',
     connection: {
         host: configDB.db_host,
@@ -11,4 +13,4 @@ const knex = require('knex')({
     }
 });
 
-module.exports = knex
+export default conn

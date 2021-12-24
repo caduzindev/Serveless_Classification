@@ -1,14 +1,12 @@
 import { injectable } from 'inversify'
+import Entity from './Entity';
 
 @injectable()
-class Image {
+class Image extends Entity {
     _table = 'images';
-    constructor(dbConnector) {
-        this.dbConnector = dbConnector
-    }
-    save(objImage) {
+    save(objImage: any): void {
         this.dbConnector.insert(objImage).into(this._table).then(() => { })
     }
 }
 
-module.exports = Image
+export default Image
