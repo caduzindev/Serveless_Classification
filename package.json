@@ -4,7 +4,7 @@
   "description": "Monitora bucket e classifica suas imagens para salvar no banco de dados",
   "main": "app.js",
   "scripts": {
-    "start": "ts-node app.ts",
+    "start": "cd build-project && npx functions-framework --target ServelessClassification [--signature-type=cloudevent]",
     "build": "tsc"
   },
   "keywords": [],

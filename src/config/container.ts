@@ -1,7 +1,6 @@
 import { Container } from 'inversify'
 import { Action } from '../action/Action'
 import ClassificationImages from '../action/ClassificationImages'
-import DB from '../database'
 import Entity from '../entities/Entity'
 import Image from '../entities/Image'
 import ImageVision from '../helpers/ImageVision'
@@ -16,10 +15,6 @@ const container = new Container()
 
 // Action
 container.bind<Action>(types.ClassificationImages).to(ClassificationImages)
-
-// Services
-container.bind<ImageVision>(types.ImageVision).to(ImageVision)
-container.bind<StorageGCP>(types.StorageGCP).to(StorageGCP)
 
 // Entities
 container.bind<Entity>(types.Entity).to(Image)
