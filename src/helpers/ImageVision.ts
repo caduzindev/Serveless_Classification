@@ -18,11 +18,16 @@ class ImageVision {
 
     private get_status_violence(violenceResult: any) {
         switch (violenceResult) {
-            case 'UNKNOWN' || 'VERY_UNLIKELY':
+            case 'UNKNOWN':
+            case 'VERY_UNLIKELY':
                 return 'BAIXO'
-            case 'UNLIKELY' || 'POSSIBLE':
+
+            case 'UNLIKELY':
+            case 'POSSIBLE':
                 return 'MEDIO'
-            case 'LIKELY' || 'VERY_LIKELY':
+
+            case 'LIKELY':
+            case 'VERY_LIKELY':
                 return 'ALTO'
             default:
                 throw new Error('Classificação desconhecida')

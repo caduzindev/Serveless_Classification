@@ -10,7 +10,8 @@
     "moduleResolution": "node",
     "types": [
       "reflect-metadata",
-      "node"
+      "node",
+      "jest"
     ],
     "outDir": "./build-project",
     "esModuleInterop": true,
