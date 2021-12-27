@@ -19,6 +19,7 @@ describe("Testando se o ImageVison retona o status de violencia correto", () => 
             })
         }))
         const mock = new mockVision()
+
         const instance = createInstace(mock)
 
         const fakePath = 'caminho/fake/da/silva'
