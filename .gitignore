@@ -1,4 +1,4 @@
 node_modules/
 build-project/
-env.yaml
+.env.yaml
 deploy.sh
