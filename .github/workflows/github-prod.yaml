@@ -7,8 +7,7 @@ jobs:
     name: Test Job
     container:
       image: node:14.18
-      steps:
-        - run: npm install
-        - run: npm run test
     steps:
       - run: echo "Opa bom demais"
+      - run: npm install
+      - run: npm run test
