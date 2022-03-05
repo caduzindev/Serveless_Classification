@@ -1,6 +1,0 @@
-name: Action de teste
-descripton: "Verifica se testes unitarios estão passando"
-
-runs:
-  using: "docker"
-  image: "Dockerfile-Test"
