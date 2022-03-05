@@ -10,4 +10,5 @@ jobs:
       steps:
         - run: npm install
         - run: npm run test
-    - run: echo "Opa bom demais"
+    steps:
+      - run: echo "Opa bom demais"
