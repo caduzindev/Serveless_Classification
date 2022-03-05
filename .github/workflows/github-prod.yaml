@@ -1,0 +1,12 @@
+name: CI
+on: [push]
+
+jobs:
+  node-docker:
+    runs-on: ubuntu-latest
+    container:
+      image: node:14.18
+      steps:
+        run: npm install
+        run: npm run test
+    run: echo "Opa bom demais"
