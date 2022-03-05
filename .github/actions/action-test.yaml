@@ -1,6 +1,0 @@
-name: Test Unit
-description: "Para rodar testes unitarios"
-
-runs:
-  using: "docker"
-  image: "Dockerfile"

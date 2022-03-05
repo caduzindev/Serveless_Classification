@@ -11,4 +11,5 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v2
       - run: echo "Opa bom demais"
-      - uses: actions/action-test
+      - run: npm install
+      - run: npm run test
