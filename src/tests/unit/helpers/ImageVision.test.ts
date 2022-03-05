@@ -27,6 +27,6 @@ describe("Testando se o ImageVison retona o status de violencia correto", () => 
         const result = await instance.image_classification_violence(fakePath)
 
         expect(mock.safeSearchDetection).toHaveBeenCalledWith(fakePath)
-        expect(result).toBe('BAIXO')
+        expect(result).toBe('ERRO_PROPOSITAL')
     })
 })
