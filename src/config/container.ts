@@ -23,9 +23,11 @@ container.bind<Entity>(types.Entity).to(Image);
 container.bind<Knex>(types.DB).toFactory<Knex>(() => () => ConnectionKnex);
 
 // Storage
-container.bind<StorageGCP>(types.StorageGCP).toFactory<StorageGCP>(() => () => new StorageGCP(new Storage()));
+container.bind<StorageGCP>(types.StorageGCP)
+  .toFactory<StorageGCP>(() => () => new StorageGCP(new Storage()));
 
 // Others
-container.bind<ImageVision>(types.ImageVision).toFactory<ImageVision>(() => () => new ImageVision(new ImageAnnotatorClient()));
+container.bind<ImageVision>(types.ImageVision)
+  .toFactory<ImageVision>(() => () => new ImageVision(new ImageAnnotatorClient()));
 
 export { container };

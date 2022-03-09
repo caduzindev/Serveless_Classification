@@ -7,7 +7,7 @@
     "start": "cd build-project && npx functions-framework --target ServelessClassification [--signature-type=cloudevent]",
     "build": "tsc",
     "test": "jest",
-    "lint": "eslint ./src --ext .js,.ts --fix"
+    "lint": "eslint src/** --ext .js,.ts --fix"
   },
   "keywords": [],
   "author": "Carlos Eduardo Almeida Silva",

@@ -7,7 +7,7 @@ function createInstace(vision) {
 
 describe('Testando se o ImageVison retona o status de violencia correto', () => {
   test('Testando retorno de status', async () => {
-    const mockVision = jest.fn().mockImplementation(() => ({
+    const MockVision = jest.fn().mockImplementation(() => ({
       safeSearchDetection: jest.fn().mockImplementation(() => [
         {
           safeSearchAnnotation: {
@@ -16,7 +16,7 @@ describe('Testando se o ImageVison retona o status de violencia correto', () => 
         },
       ]),
     }));
-    const mock = new mockVision();
+    const mock = new MockVision();
 
     const instance = createInstace(mock);
 
