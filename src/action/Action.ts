@@ -1,3 +1,3 @@
 export interface Action {
-    execute(event: any): void;
+  execute(event: any): void;
 }
